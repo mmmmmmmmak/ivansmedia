@@ -101,7 +101,7 @@ cmd.hear(/^(?:удалить группу)$/i, async (msg) => {
      if (/[a-zA-Z]/.test(answ.text)){
                     msg.send(`Формат неверный! Выполните данную команду снова.`)
      }
-     if(!groupsnum.includes(answ.text)) {msg.send('Такой группы нет в списке!')}
+     if(!groupsnum.includes(Number(answ.text))) {msg.send('Такой группы нет в списке!')}
      else {
     let num = groupsnum.indexOf(answ.text)
     groups.splice(num, 1)
