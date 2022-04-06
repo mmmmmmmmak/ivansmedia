@@ -4,8 +4,8 @@ const {VK, resolveResource, API, getRandomId, Keyboard, MessageForwardsCollectio
 const { post } = require('request');
 
 const vk = new VK({
-    token: '64d54def091abf4c3b1d24341e258f5b701ca40156edc232a9264b0639affa706f97bbb33459c4dfb872c'
-    // token: 'b79d783748e89e89eaef264a76e1c142702c66f6cd24bd8c3258f2da4015af94dc6fe8678aebc14cb94a7'
+    // token: '64d54def091abf4c3b1d24341e258f5b701ca40156edc232a9264b0639affa706f97bbb33459c4dfb872c'
+    token: '299d7b54ff604e9963bf8519923be135323f30c0e4990f4c90367beb4c716a1c6fce49bad5097e8cab43a'
 });
 
 const { api, updates, snippets } = vk
