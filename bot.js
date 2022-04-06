@@ -34,7 +34,7 @@ async function getVkNameById(id) {
   let groups = ['https://vk.com/ivansmedia']
   let groupsnum = [211145670]
 
-  cmd.hear(/^(?:Напишите любую фразу чтобы увидеть друзей)$/i, async (msg) => {
+  cmd.hear(/^(?:Начать)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
