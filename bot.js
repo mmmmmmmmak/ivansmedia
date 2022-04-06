@@ -63,7 +63,7 @@ cmd.hear(/^(?:Забрать 40 друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Спасибо за участие, ${name}, вот друзья: ${groups.join('\n')}`)
+            `Спасибо за участие, ${name}, вот друзья:\n${groups.join('\n')}`)
     }
 })
 
