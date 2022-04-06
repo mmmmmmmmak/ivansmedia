@@ -21,7 +21,7 @@ cmd.hear(/^hello$/, async (context) => {
 await context.send('Hello!');
 });
 
-console.log('Старт')
+console.log('Поехали!')
 vk.updates.start()
 
 async function getVkNameById(id) {
@@ -31,10 +31,10 @@ async function getVkNameById(id) {
     return data.first_name;
   } 
 
-  let groups = ['https://vk.com/almazovyt', 'https://vk.com/ivansmedia']
+  let groups = ['https://vk.com/ivansmedia_rezerv', 'https://vk.com/ivansmedia']
   let groupsnum = [129400026, 211145670]
 
-  cmd.hear(/^(?:Начать)$/i, async (msg) => {
+  cmd.hear(/^(?:Напишите любую фразу чтобы увидеть друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
@@ -48,7 +48,7 @@ async function getVkNameById(id) {
                 "action": { 
                 "type": "text", 
                 "payload": "{\"button\": \"1\"}", 
-                "label": "Дай мне ссылки для подписки!" 
+                "label": "Хочу узнать новых друзей" 
                 }, 
                 "color": "positive" 
                 }],
@@ -59,11 +59,11 @@ async function getVkNameById(id) {
     }
 })
 
-cmd.hear(/^(?:Дай мне ссылки для подписки!)$/i, async (msg) => {
+cmd.hear(/^(?:Жду друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Ещё раз привет, ${name}, лови ссылочки: ${groups.join('\n')}`
+            `Спасибо за участие , ${name}, вот друзья: ${groups.join('\n')}`
             ,
             { 
                 keyboard: JSON.stringify( 
@@ -74,7 +74,7 @@ cmd.hear(/^(?:Дай мне ссылки для подписки!)$/i, async (ms
                 "action": { 
                 "type": "text", 
                 "payload": "{\"button\": \"1\"}", 
-                "label": "Я подписался на все ссылки." 
+                "label": "Все друзья у меня." 
                 }, 
                 "color": "positive" 
                 }],
