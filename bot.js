@@ -126,7 +126,7 @@ cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
             console.log(res)
             if(res < 1) {
                 unsub = 1
-                msg.send(`Ошибка! Пользователь не подписался на группу: vk.com/club${item}.`)
+               return msg.send(`Ошибка! Пользователь не подписался на группу: vk.com/club${item}.`)
             }
             else if (res > 0) {
                 if(otpr == 0 && unsub == 0) {
