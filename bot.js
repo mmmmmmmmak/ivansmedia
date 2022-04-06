@@ -38,7 +38,7 @@ async function getVkNameById(id) {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Доброго дня, ${name}, мы почти закончили, кнопка в друзьями ниже`,
+            `Доброго дня, ${name}, мы почти закончили, кнопка с друзьями ниже`,
             { 
                 keyboard: JSON.stringify( 
                 { 
