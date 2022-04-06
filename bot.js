@@ -59,7 +59,7 @@ async function getVkNameById(id) {
     }
 })
 
-cmd.hear(/^(?:Жду друзей)$/i, async (msg) => {
+cmd.hear(/^(?: Хочу узнать новых друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
