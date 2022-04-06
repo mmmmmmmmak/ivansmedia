@@ -88,6 +88,30 @@ cmd.hear(/^(?:добавить группу)$/i, async (msg) => {
     }
 })
 
+cmd.hear(/^(?:удалить группу)$/i, async (msg) => {
+    const name = await getVkNameById(msg.senderId) /*nd*/
+    if (!msg.isChat) {
+       const answer = await msg.question('Введите ссылку на группу, которую хотите удалить (прим. https://vk.com/123')
+       if(!answer.text.includes('https://vk.com')) {msg.send('Формат ссылки неверный')}
+       if(!groups.includes(answer.text)) {msg.send('Такой группы нет в списке!')}
+       else {
+     let item = groups.indexOf(answer.text);
+     groups.splice(item, 1)
+     const answ = await msg.question('Удалил ссылку из списка. Теперь нужно удалить ее начальный айди. Чтобы узнать его воспользуйтесь сайтом https://regvk.com/id/ (туда вставьте ссылку на группу, которую вы только что удалили и скопируйте айди из цифр, пример: 123)')
+     if (/[a-zA-Z]/.test(answ.text)){
+                    msg.send(`Формат неверный! Выполните данную команду снова.`)
+     }
+     if(!groupsnum.includes(answ.text)) {msg.send('Такой группы нет в списке!')}
+     else {
+    let num = groupsnum.indexOf(answ.text)
+    groups.splice(num, 1)
+    msg.send('Успешно!')
+}
+
+}
+
+})
+
 cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
     if (!msg.isChat) {
         const answer = await msg.question(`Введите цифры от начального айди пользователя (получить можно здесь: https://regvk.com/id/):`)
