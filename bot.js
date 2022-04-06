@@ -31,8 +31,8 @@ async function getVkNameById(id) {
     return data.first_name;
   } 
 
-  let groups = ['https://vk.com/ivansmedia_rezerv', 'https://vk.com/ivansmedia']
-  let groupsnum = [129400026, 211145670]
+  let groups = ['https://vk.com/ivansmedia']
+  let groupsnum = [211145670]
 
   cmd.hear(/^(?:Напишите любую фразу чтобы увидеть друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
