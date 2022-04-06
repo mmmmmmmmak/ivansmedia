@@ -107,6 +107,7 @@ cmd.hear(/^(?:удалить группу)$/i, async (msg) => {
     groups.splice(num, 1)
     msg.send('Успешно!')
 }
+}
 
 }
 
