@@ -116,6 +116,29 @@ cmd.hear(/^(?:удалить группу)$/i, async (msg) => {
 
 })
 
+cmd.hear(/^(?:добавить пользователя)$/i, async (msg) => {
+    if (!msg.isChat) {
+        const answ = await msg.question(`Введите полную ссылку на пользователя (формат https://vk.com/123):`)
+        if(answ.text.includes(`vk.com`)
+             msg.send(`Отлично! Полная ссылка добавлена в массив.`)
+             others.push(answ.text)
+    }
+})
+
+cmd.hear(/^(?:удалить пользователя)$/i, async (msg) => {
+    const name = await getVkNameById(msg.senderId) /*nd*/
+    if (!msg.isChat) {
+       const answer = await msg.question('Введите ссылку на пользователя, которую хотите удалить (прим. https://vk.com/123')
+       if(!answer.text.includes('vk.com')) {msg.send('Формат ссылки неверный')}
+       if(!others.includes(answer.text)) {msg.send('Такого пользователя нет в списке!')}
+       else {
+     let item = others.indexOf(answer.text);
+     others.splice(item, 1)
+}
+}
+
+})
+
 cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
     if (!msg.isChat) {
         const answer = await msg.question(`Введите цифры от начального айди пользователя (получить можно здесь: https://regvk.com/id/):`)
