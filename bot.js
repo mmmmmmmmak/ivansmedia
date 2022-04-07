@@ -146,6 +146,7 @@ cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
         const answer = await msg.question(`Введите цифры от начального айди пользователя (получить можно здесь: https://regvk.com/id/):`)
         let otpr = 0
         let unsub = 0
+        msg.send('Проверяю... (займёт до 2 минут, если не будет сообщений об ошибке, то проверка пройдена!)')
         groupsnum.forEach((item, index, array) => {
             vk.api.groups.isMember({
             user_id: answer.text,
@@ -157,6 +158,5 @@ cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
                return msg.send(`Ошибка! Пользователь не подписался на группу: vk.com/club${item}.`)
             }
         })})
-       return msg.send('Проверяю... (если не будет сообщений об ошибке, то проверка пройдена!')
     }
 })
