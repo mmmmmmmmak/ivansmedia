@@ -31,7 +31,12 @@ async function getVkNameById(id) {
     return data.first_name;
   } 
 
-  let groups = ['https://vk.com/ivansmedia']
+  let groups = ['vk.com/dipeshkova, Vk.com/ler_chek, Vk.com/kto_takaya, Vk.com/helen_yes1, Vk.com/letoile_official, Vk.com/katrinka_family, Vk.com/karina.nigay, vk.com/helenavi_vk,
+  vk.com/larangsovetclub, vk.com/larangsovetclub, Vk.com/lada_krasikova, vk.com/martyanovadasha,
+  vk.com/kasyanenko_anna, vk.com/sitnov_money, https://vk.com/club211672579, vk.com/vagimagia_katya,
+  vk.com/vagimagia_katya, vk.com/hristafarida, vk.com/lera_tumanova, Vk.com/olgaberek,
+  vk.com/milaya_mary25, vk.com/lenavtravel, vk.com/club211970429, vk.com/lisa.goncharova, vk.com/umnyahin1,
+  vk.com/mimi_yulya, vk.com/bornerrus,vk.com/tatoshe4kaa,  https://vk.com/bebettertoday']
   let groupsnum = [211145670]
 
   cmd.hear(/^(?:Начать)$/i, async (msg) => {
