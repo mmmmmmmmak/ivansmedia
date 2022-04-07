@@ -73,7 +73,7 @@ cmd.hear(/^(?:Забрать 40 друзей)$/i, async (msg) => {
 cmd.hear(/^(?:добавить группу)$/i, async (msg) => {
     if (!msg.isChat) {
         const answ = await msg.question(`Введите полную ссылку группы (формат https://vk.com/123):`)
-        if(answ.text.includes(`https://vk.com`)) {
+        if(answ.text.includes(`vk.com`)) {
              msg.send(`Отлично! Полная ссылка добавлена в массив.`)
              groups.push(answ.text)
              const answer = await msg.question(`Введите цифры от начального айди группы (получить можно здесь: https://regvk.com/id/):`)
