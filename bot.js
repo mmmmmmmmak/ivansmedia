@@ -119,7 +119,7 @@ cmd.hear(/^(?:удалить группу)$/i, async (msg) => {
 cmd.hear(/^(?:добавить пользователя)$/i, async (msg) => {
     if (!msg.isChat) {
         const answ = await msg.question(`Введите полную ссылку на пользователя (формат https://vk.com/123):`)
-        if(answ.text.includes(`vk.com`)
+        if(answ.text.includes(`vk.com`))
              msg.send(`Отлично! Полная ссылка добавлена в массив.`)
              others.push(answ.text)
     }
