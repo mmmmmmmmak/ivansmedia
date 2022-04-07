@@ -43,7 +43,7 @@ async function getVkNameById(id) {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Доброго дня, ${name}, мы почти закончили, кнопка с друзьями ниже`,
+            `${name}, Тыкните на иконку клавиатуры справа от ввода текста, чтобы появилась кнопка друзей`,
             { 
                 keyboard: JSON.stringify( 
                 { 
@@ -68,7 +68,7 @@ cmd.hear(/^(?:Забрать 40 друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Спасибо за участие, ${name}, вот друзья:\n${groups.join('\n')}`)
+            `Спасибо вы участвуете на 100%, ${name}, вот друзья:\n${groups.join('\n')}`)
     }
 })
 
