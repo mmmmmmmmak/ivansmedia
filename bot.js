@@ -134,6 +134,7 @@ cmd.hear(/^(?:удалить пользователя)$/i, async (msg) => {
        else {
      let item = others.indexOf(answer.text);
      others.splice(item, 1)
+     return msg.send('Успешно')
 }
 }
 
