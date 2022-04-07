@@ -31,13 +31,11 @@ async function getVkNameById(id) {
     return data.first_name;
   } 
 
-  let groups = ['vk.com/dipeshkova, Vk.com/ler_chek, Vk.com/kto_takaya, Vk.com/helen_yes1, Vk.com/letoile_official, Vk.com/katrinka_family, Vk.com/karina.nigay, vk.com/helenavi_vk,
-  vk.com/larangsovetclub, vk.com/larangsovetclub, Vk.com/lada_krasikova, vk.com/martyanovadasha,
-  vk.com/kasyanenko_anna, vk.com/sitnov_money, https://vk.com/club211672579, vk.com/vagimagia_katya,
-  vk.com/vagimagia_katya, vk.com/hristafarida, vk.com/lera_tumanova, Vk.com/olgaberek,
-  vk.com/milaya_mary25, vk.com/lenavtravel, vk.com/club211970429, vk.com/lisa.goncharova, vk.com/umnyahin1,
-  vk.com/mimi_yulya, vk.com/bornerrus,vk.com/tatoshe4kaa,  https://vk.com/bebettertoday']
+    let groups = ['http://vk.com/dipeshkova', 'http://vk.com/letoile_official', 'http://vk.com/karina.nigay', 'http://vk.com/larangsovetclub', 'http://vk.com/martyanovadasha',
+  'http://vk.com/kasyanenko_anna', 'http://vk.com/sitnov_money', 'https://vk.com/club211672579', 'http://vk.com/hristafarida', 'http://vk.com/lera_tumanova', 'vk.com/club211970429', 'http://vk.com/umnyahin1', 'http://vk.com/bornerrus', 'https://vk.com/bebettertoday']
   let groupsnum = [211145670]
+
+  let others = ['http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/helen_yes1', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa']
 
   cmd.hear(/^(?:Начать)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
