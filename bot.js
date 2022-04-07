@@ -66,7 +66,7 @@ cmd.hear(/^(?:Забрать 40 друзей)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
         msg.send(
-            `Спасибо вы участвуете на 100%, ${name}, вот друзья:\n\nСообщества:\n\n${groups.join('\n')}\n\nПользователи:\n\n${others.join('\n')}`)
+            `Спасибо вы участвуете на 100%, ${name}, вот друзья:\n\nСообщества:\n\n${groups.join('\n')}\n\nПользователи:\n\n${others.join('\n')}`, 'photo-211145670_457239073')
     }
 })
 
