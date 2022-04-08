@@ -45,7 +45,7 @@ async function getVkNameById(id) {
                 user_id: msg.senderId,
                 random_id: Date.now(),
                 message: `${name}, Тыкните на иконку клавиатуры справа от ввода текста, чтобы появилась кнопка друзей`,
-                attachment: 'photo-211145670_457239073',
+                attachment: 'photo-211145670_457239074',
                 keyboard: JSON.stringify(
             {
                 "one_time": false,
