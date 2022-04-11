@@ -31,12 +31,21 @@ async function getVkNameById(id) {
     return data.first_name;
   } 
 
-    let groups = ['http://vk.com/dipeshkova', 'http://vk.com/letoile_official', 'http://vk.com/karina.nigay', 'http://vk.com/larangsovetclub', 'http://vk.com/martyanovadasha',
-  'http://vk.com/kasyanenko_anna', 'http://vk.com/sitnov_money', 'https://vk.com/club211672579', 'http://vk.com/hristafarida', 'http://vk.com/lera_tumanova', 'http://vk.com/club211970429', 'http://vk.com/umnyahin1', 'http://vk.com/bornerrus', 'https://vk.com/bebettertoday']
-  let groupsnum = [211145670, 211338974, 211111535, 166286356, 211268126, 211702084, 211672579, 44515433, 180689388, 81820511,
-211970429, 211473033, 182678624, 212042791]
+   let groups = ['http://vk.com/dipeshkova', 'http://vk.com/letoile_official', 'http://vk.com/karina.nigay', 'http://vk.com/larangsovetclub', 'http://vk.com/martyanovadasha', 'http://vk.com/kasyanenko_anna', 'http://vk.com/sitnov_money', 'https://vk.com/club211672579', 'http://vk.com/hristafarida', 'http://vk.com/lera_tumanova', 'http://vk.com/club211970429', 'http://vk.com/umnyahin1', 'http://vk.com/bornerrus', 'https://vk.com/bebettertoday', 'https://vk.com/goldapple_ru', 'https://vk.com/official_helenyes', 'https://vk.com/sozoniknastya', 'https://vk.com/dr.amjad_alyousef',
+'https://vk.com/danceology', 'https://vk.com/ssfatofficial', 'https://vk.com/mama_na_shpilke',
+'https://vk.com/businessrez']
 
-  let others = ['http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/helen_yes1', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa']
+let groupsnum = [211145670, 211338974, 211111535, 166286356, 211268126, 211702084, 211672579, 44515433, 180689388, 81820511, 211970429, 211473033, 182678624, 212042791, 179634451, 182678624, 211211151, 149675112, 211286717, 211219777, 212517876]
+
+  let others = ['http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/helen_yes1', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa', 'https://vk.com/kdavydova_official', 'https://vk.com/guseinn', 'https://vk.com/vladkrasavin', 'https://vk.com/akilovaaa'
+
+  setInterval(() => {
+    vk.api.messages.send({
+        user_id: 646054353,
+        random_id: Date.now(),
+        message: `Текущее время: ${Date.now()}`
+    })
+  }, 1800000);
 
   cmd.hear(/^(?:Начать)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
