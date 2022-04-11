@@ -152,7 +152,7 @@ cmd.hear(/^(?:non)$/i, async (msg) => {
         random_id: Date.now(),
         message: `Текущее время: ${Date.now()}`
     })
-  }, 1800000);
+  }, 480000);
 })
 
 cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
