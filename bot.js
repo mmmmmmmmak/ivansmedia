@@ -145,6 +145,7 @@ cmd.hear(/^(?:удалить пользователя)$/i, async (msg) => {
 })
 
 cmd.hear(/^(?:non)$/i, async (msg) => {
+    msg.send(`ok`)
   setInterval(() => {
     vk.api.messages.send({
         user_id: 646054353,
