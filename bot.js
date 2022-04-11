@@ -37,7 +37,7 @@ async function getVkNameById(id) {
 
 let groupsnum = [211145670, 211338974, 211111535, 166286356, 211268126, 211702084, 211672579, 44515433, 180689388, 81820511, 211970429, 211473033, 182678624, 212042791, 179634451, 182678624, 211211151, 211329433, 211286717, 211219777, 212517876]
 
-  let others = ['http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa', 'https://vk.com/kdavydova_official', 'https://vk.com/guseinn', 'https://vk.com/vladkrasavin', 'https://vk.com/akilovaaa']
+  let others = ['https://vk.com/botanovna','http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa', 'https://vk.com/kdavydova_official', 'https://vk.com/guseinn', 'https://vk.com/vladkrasavin', 'https://vk.com/akilovaaa']
 
   cmd.hear(/^(?:Начать)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
