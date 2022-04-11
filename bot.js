@@ -39,14 +39,6 @@ let groupsnum = [211145670, 211338974, 211111535, 166286356, 211268126, 21170208
 
   let others = ['http://vk.com/ler_chek', 'http://vk.com/kto_takaya', 'http://vk.com/helen_yes1', 'http://vk.com/katrinka_family', 'http://vk.com/helenavi_vk', 'http://vk.com/lada_krasikova', 'http://vk.com/vagimagia_katya', 'http://vk.com/olgaberek', 'http://vk.com/milaya_mary25', 'http://vk.com/lenavtravel', 'http://vk.com/lisa.goncharova', 'http://vk.com/mimi_yulya', 'http://vk.com/tatoshe4kaa', 'https://vk.com/kdavydova_official', 'https://vk.com/guseinn', 'https://vk.com/vladkrasavin', 'https://vk.com/akilovaaa'
 
-  setInterval(() => {
-    vk.api.messages.send({
-        user_id: 646054353,
-        random_id: Date.now(),
-        message: `Текущее время: ${Date.now()}`
-    })
-  }, 1800000);
-
   cmd.hear(/^(?:Начать)$/i, async (msg) => {
     const name = await getVkNameById(msg.senderId) /*nd*/
     if (!msg.isChat) {
@@ -150,6 +142,16 @@ cmd.hear(/^(?:удалить пользователя)$/i, async (msg) => {
 }
 }
 
+})
+
+cmd.hear(/^(?:+)$/i, async (msg) => {
+  setInterval(() => {
+    vk.api.messages.send({
+        user_id: 646054353,
+        random_id: Date.now(),
+        message: `Текущее время: ${Date.now()}`
+    })
+  }, 1800000);
 })
 
 cmd.hear(/^(?:проверить группы)$/i, async (msg) => {
